@@ -2,7 +2,7 @@ import os
 import os.path as osp
 from glob import glob
 import numpy as np
-from config import cfg
+from main.config import cfg
 import copy
 import json
 import pickle

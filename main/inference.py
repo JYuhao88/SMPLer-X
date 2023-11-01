@@ -6,16 +6,18 @@ import numpy as np
 import torchvision.transforms as transforms
 import torch.backends.cudnn as cudnn
 import torch
-sys.path.insert(0, osp.join('..', 'main'))
-sys.path.insert(0, osp.join('..', 'data'))
-sys.path.insert(0, osp.join('..', 'common'))
-from config import cfg
+
+# sys.path.insert(0, osp.join("..", "main"))
+# sys.path.insert(0, osp.join("..", "data"))
+# sys.path.insert(0, osp.join("..", "common"))
+from main.config import cfg
 import cv2
 from tqdm import tqdm
 import json
 from typing import Literal, Union
 from mmdet.apis import init_detector, inference_detector
-from utils.inference_utils import process_mmdet_results, non_max_suppression
+from common.utils.inference_utils import process_mmdet_results, non_max_suppression
+
 
 def parse_args():
     parser = argparse.ArgumentParser()
@@ -42,8 +44,8 @@ def parse_args():
 def main():
 
     args = parse_args()
-    config_path = osp.join('./config', f'config_{args.pretrained_model}.py')
-    ckpt_path = osp.join('../pretrained_models', f'{args.pretrained_model}.pth.tar')
+    config_path = osp.join("main/config", f"config_{args.pretrained_model}.py")
+    ckpt_path = osp.join("pretrained_models", f"{args.pretrained_model}.pth.tar")
 
     cfg.get_config_fromfile(config_path)
     cfg.update_test_config(args.testset, args.agora_benchmark, shapy_eval_split=None, 
@@ -52,10 +54,15 @@ def main():
     cudnn.benchmark = True
 
     # load model
-    from base import Demoer
-    from utils.preprocessing import load_img, process_bbox, generate_patch_image
-    from utils.vis import render_mesh, save_obj
-    from utils.human_models import smpl_x
+    from common.base import Demoer
+    from common.utils.preprocessing import (
+        load_img,
+        process_bbox,
+        generate_patch_image,
+    )
+    from common.utils.vis import render_mesh, save_obj
+    from common.utils.human_models import smpl_x
+
     demoer = Demoer()
     demoer._make_model()
     demoer.model.eval()
@@ -66,8 +73,8 @@ def main():
             
 
     ### mmdet init
-    checkpoint_file = '../pretrained_models/mmdet/faster_rcnn_r50_fpn_1x_coco_20200130-047c8118.pth'
-    config_file= '../pretrained_models/mmdet/mmdet_faster_rcnn_r50_fpn_coco.py'
+    checkpoint_file = 'pretrained_models/mmdet/faster_rcnn_r50_fpn_1x_coco_20200130-047c8118.pth'
+    config_file= 'pretrained_models/mmdet/mmdet_faster_rcnn_r50_fpn_coco.py'
     model = init_detector(config_file, checkpoint_file, device='cuda:0')  # or device='cuda:0'
 
     for frame in tqdm(range(start, end)):

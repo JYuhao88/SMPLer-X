@@ -1,7 +1,7 @@
 import random
 import numpy as np
 from torch.utils.data.dataset import Dataset
-from config import cfg
+from main.config import cfg
 
 class MultipleDatasets(Dataset):
     def __init__(self, dbs, make_same_len=True, total_len=None, verbose=False):

@@ -7,7 +7,7 @@ import cv2
 import json
 import copy
 from pycocotools.coco import COCO
-from config import cfg
+from main.config import cfg
 from utils.human_models import smpl_x
 from utils.preprocessing import load_img, process_bbox, augmentation, process_db_coord, process_human_model_output, \
     get_fitting_error_3D

@@ -1,7 +1,7 @@
 import numpy as np
 import cv2
 import random
-from config import cfg
+from main.config import cfg
 import math
 from utils.human_models import smpl_x, smpl
 from utils.transforms import cam2pixel, transform_joint_to_other_db

@@ -4,12 +4,12 @@ import abc
 from torch.utils.data import DataLoader
 import torch.optim
 import torchvision.transforms as transforms
-from timer import Timer
+from common.timer import Timer
 from logger import colorlogger
 from torch.nn.parallel.data_parallel import DataParallel
-from config import cfg
-from SMPLer_X import get_model
-from dataset import MultipleDatasets
+from main.config import cfg
+from main.SMPLer_X import get_model
+from data.dataset import MultipleDatasets
 # ddp
 import torch.distributed as dist
 from torch.utils.data import DistributedSampler

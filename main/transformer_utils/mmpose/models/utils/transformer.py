@@ -27,7 +27,7 @@ from mmcv.cnn import build_activation_layer, build_norm_layer, xavier_init
 
 from utils.human_models import smpl_x
 
-from config import cfg
+from main.config import cfg
 
 
 def point_sample(input, point_coords, **kwargs):

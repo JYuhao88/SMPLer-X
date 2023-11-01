@@ -22,7 +22,7 @@ from .rle_regression_head import nets, nett, RealNVP, nets3d, nett3d
 from easydict import EasyDict
 from mmpose.models.losses.regression_loss import L1Loss
 from mmpose.models.losses.rle_loss import RLELoss_poseur, RLEOHKMLoss
-from config import cfg
+from main.config import cfg
 from utils.human_models import smpl_x
 from torch.distributions.utils import lazy_property
 

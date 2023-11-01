@@ -55,7 +55,7 @@ agora_benchmark = 'agora_model' # 'agora_model', 'test_only'
 
 model_type = 'smpler_x_h'
 encoder_config_file = 'transformer_utils/configs/smpler_x/encoder/body_encoder_huge.py'
-encoder_pretrained_model_path = '../pretrained_models/vitpose_huge.pth'
+encoder_pretrained_model_path = 'pretrained_models/vitpose_huge.pth'
 feat_dim = 1280
 
 ## =====FIXED ARGS============================================================

@@ -5,7 +5,7 @@ from nets.smpler_x import PositionNet, HandRotationNet, FaceRegressor, BoxNet, H
 from nets.loss import CoordLoss, ParamLoss, CELoss
 from utils.human_models import smpl_x
 from utils.transforms import rot6d_to_axis_angle, restore_bbox
-from config import cfg
+from main.config import cfg
 import math
 import copy
 from mmpose.models import build_posenet

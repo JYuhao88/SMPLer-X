@@ -1,7 +1,7 @@
 import argparse
 import torch
 import torch.backends.cudnn as cudnn
-from config import cfg
+from main.config import cfg
 import os.path as osp
 
 # ddp

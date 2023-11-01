@@ -10,7 +10,7 @@ from .. import builder
 from ..builder import POSENETS
 from .base import BasePose
 import torch
-from config import cfg
+from main.config import cfg
 
 try:
     from mmcv.runner import auto_fp16

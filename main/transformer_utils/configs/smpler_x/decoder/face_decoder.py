@@ -1,4 +1,4 @@
-from config import cfg
+from main.config import cfg
 log_level = 'INFO'
 load_from = None
 resume_from = None

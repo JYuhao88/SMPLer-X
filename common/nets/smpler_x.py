@@ -4,7 +4,7 @@ from torch.nn import functional as F
 from nets.layer import make_conv_layers, make_linear_layers, make_deconv_layers
 from utils.transforms import sample_joint_features, soft_argmax_2d, soft_argmax_3d
 from utils.human_models import smpl_x
-from config import cfg
+from main.config import cfg
 from mmcv.ops.roi_align import roi_align
 
 class PositionNet(nn.Module):

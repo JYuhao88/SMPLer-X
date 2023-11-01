@@ -38,7 +38,7 @@ from .utils import (
     FLAMEOutput,
     find_joint_kin_chain)
 from .vertex_joint_selector import VertexJointSelector
-from config import cfg
+from main.config import cfg
 
 class SMPL(nn.Module):
 

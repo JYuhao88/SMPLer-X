@@ -1,5 +1,5 @@
 import argparse
-from config import cfg
+from main.config import cfg
 from tqdm import tqdm
 import torch
 import torch.backends.cudnn as cudnn

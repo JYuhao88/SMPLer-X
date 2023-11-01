@@ -8,7 +8,7 @@ import os
 os.environ["PYOPENGL_PLATFORM"] = "egl"
 import pyrender
 import trimesh
-from config import cfg
+from main.config import cfg
 
 def vis_keypoints_with_skeleton(img, kps, kps_lines, kp_thresh=0.4, alpha=1):
     # Convert from plt 0-1 RGBA colors to 0-255 BGR colors for opencv.

@@ -7,9 +7,9 @@ import json
 import cv2
 import torch
 from pycocotools.coco import COCO
-from utils.human_models import smpl_x
-from utils.preprocessing import load_img, process_bbox, augmentation, process_db_coord, process_human_model_output, resize_bbox
-from utils.transforms import rigid_align
+from common.utils.human_models import smpl_x
+from common.utils.preprocessing import load_img, process_bbox, augmentation, process_db_coord, process_human_model_output, resize_bbox
+from common.utils.transforms import rigid_align
 from torch.utils.data.dataset import Dataset
 import random
 import tqdm

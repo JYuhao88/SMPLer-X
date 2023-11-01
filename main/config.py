@@ -17,8 +17,8 @@ class Config:
         self.human_model_path = osp.join(self.root_dir, 'common', 'utils', 'human_model_files')
 
         ## add some paths to the system root dir
-        sys.path.insert(0, osp.join(self.root_dir, 'common'))
-        from utils.dir import add_pypath
+        # sys.path.insert(0, osp.join(self.root_dir, 'common'))
+        from common.utils.dir import add_pypath
         add_pypath(osp.join(self.data_dir))
         for dataset in os.listdir(osp.join(self.root_dir, 'data')):
             if dataset not in ['humandata.py', '__pycache__', 'dataset.py']:
@@ -35,7 +35,7 @@ class Config:
         self.code_dir = osp.join(self.output_dir, 'code')
         self.result_dir = osp.join(self.output_dir, 'result')
 
-        from utils.dir import make_folder
+        from common.utils.dir import make_folder
         make_folder(self.model_dir)
         make_folder(self.vis_dir)
         make_folder(self.log_dir)

@@ -5,7 +5,7 @@ from torch.utils.data import DataLoader
 import torch.optim
 import torchvision.transforms as transforms
 from common.timer import Timer
-from logger import colorlogger
+from common.logger import colorlogger
 from torch.nn.parallel.data_parallel import DataParallel
 from main.config import cfg
 from main.SMPLer_X import get_model
@@ -14,7 +14,7 @@ from data.dataset import MultipleDatasets
 import torch.distributed as dist
 from torch.utils.data import DistributedSampler
 import torch.utils.data.distributed
-from utils.distribute_utils import (
+from common.utils.distribute_utils import (
     get_rank, is_main_process, time_synchronized, get_group_idx, get_process_groups
 )
 from mmcv.runner import get_dist_info

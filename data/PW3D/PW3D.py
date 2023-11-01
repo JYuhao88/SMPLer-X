@@ -7,9 +7,9 @@ import json
 import copy
 from pycocotools.coco import COCO
 from main.config import cfg
-from utils.human_models import smpl_x, smpl
-from utils.preprocessing import load_img, process_bbox, augmentation, process_human_model_output, process_db_coord
-from utils.transforms import rigid_align
+from common.utils.human_models import smpl_x, smpl
+from common.utils.preprocessing import load_img, process_bbox, augmentation, process_human_model_output, process_db_coord
+from common.utils.transforms import rigid_align
 import numpy as np
 import random
 

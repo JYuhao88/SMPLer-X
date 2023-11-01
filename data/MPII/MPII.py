@@ -7,12 +7,12 @@ import json
 import cv2
 import torch
 from pycocotools.coco import COCO
-from utils.human_models import smpl_x
-from utils.preprocessing import load_img, process_bbox, augmentation, process_db_coord, \
+from common.utils.human_models import smpl_x
+from common.utils.preprocessing import load_img, process_bbox, augmentation, process_db_coord, \
     process_human_model_output
 import random
 from humandata import Cache
-# from utils.vis import vis_keypoints, vis_mesh, save_obj
+# from common.utils.vis import vis_keypoints, vis_mesh, save_obj
 
 class MPII(torch.utils.data.Dataset):
     def __init__(self, transform, data_split):

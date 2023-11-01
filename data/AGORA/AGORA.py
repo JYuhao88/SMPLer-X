@@ -9,10 +9,10 @@ import pickle
 import cv2
 import torch
 from pycocotools.coco import COCO
-from utils.human_models import smpl_x
-from utils.preprocessing import load_img, sanitize_bbox, process_bbox, augmentation, process_db_coord, \
+from common.utils.human_models import smpl_x
+from common.utils.preprocessing import load_img, sanitize_bbox, process_bbox, augmentation, process_db_coord, \
     process_human_model_output, load_ply, load_obj
-from utils.transforms import rigid_align
+from common.utils.transforms import rigid_align
 import tqdm
 import random
 from humandata import Cache

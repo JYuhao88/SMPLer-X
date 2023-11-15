@@ -5,6 +5,30 @@ import datetime
 from mmcv import Config as MMConfig
 
 class Config:
+    def __init__(self):
+        self.cur_dir = None
+        self.root_dir = None
+        self.data_dir = None
+        self.human_model_path = None
+        self.config_path = None
+        self.output_dir = None
+        self.model_dir = None
+        self.vis_dir = None
+        self.log_dir = None
+        self.code_dir = None
+        self.result_dir = None
+        self.num_gpus = None
+        self.exp_name = None
+        self.testset = None
+
+        self.agora_benchmark = None
+        self.pretrained_model_path = None
+        self.shapy_eval_split = None
+        self.use_cache = None
+        self.eval_on_train = None
+        self.vis = None
+        
+
     def get_config_fromfile(self, config_path):
         self.config_path = config_path
         cfg = MMConfig.fromfile(self.config_path)

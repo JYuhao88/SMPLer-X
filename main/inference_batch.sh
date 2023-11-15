@@ -29,7 +29,7 @@ echo $end_count
 # inference
 PYTHONPATH="$(dirname $0)/..":$PYTHONPATH \
 
-python -m main.inference_server \
+python -m main.inference_batch \
 --num_gpus ${GPUS_PER_NODE} \
 --num_procs 80 \
 --exp_name output/demo_${JOB_NAME} \
@@ -41,16 +41,11 @@ python -m main.inference_server \
 --output_folder ${SAVE_DIR} \
 --show_verts \
 --show_bbox \
-# --save_mesh \
-# --multi_person \
-# --iou_thr 0 \
---bbox_thr 20 \
---object_show_score_llimit 0 \
---humman_appear_ratio_llimit 0 \
---humman_confidence_llimit 0 \
+--save_mesh \
 --max_num_human 10 \
+--object_show_score_llimit 0 \
 --batch_size 1024 \
 
 
 # images to video
-ffmpeg -y -f image2 -r ${FPS} -i ${SAVE_DIR}/img/%06d.jpg -vcodec mjpeg -qscale 0 -pix_fmt yuv420p demo/results/${INPUT_VIDEO}.mp4
+ffmpeg -y -f image2 -r ${FPS} -i ${SAVE_DIR}/img_mesh/%06d.jpg -vcodec mjpeg -qscale 0 -pix_fmt yuv420p demo/results/${INPUT_VIDEO}.mp4
